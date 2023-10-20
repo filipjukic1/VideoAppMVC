@@ -1,0 +1,114 @@
+﻿@model NewVideoVM
+
+@{
+    ViewData ["Title"] = "Update a video";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Update video</h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                <form asp-controller="Videos" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" required />
+                                <div class="invalid-feedback">
+                                    Please provide a valid name.
+                                </div>
+                             </div>
+                                <div class="form-group">
+                                    <label asp-for="CreatedAt" class="control-label"></label>
+                                    <input asp-for="CreatedAt" type="date" class="form-control" required/>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid date.
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Image" class="control-label"></label>
+                                    <input asp-for="Image" class="form-control" required />
+                                    <div class="invalid-feedback">
+                                        Please provide a valid ImageUrl.
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="TotalTime" class="control-label"></label>
+                                    <input asp-for="TotalTime" type="number" class="form-control" required/>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid name.
+                                    </div>
+                                </div>
+                        </div>
+                       <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="StreamingUrl" class="control-label"></label>
+                                <input  asp-for="StreamingUrl" class="form-control" required/>
+                                <div class="invalid-feedback">
+                                    Please provide a valid url.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="GenreId" class="control-label"></label>
+                                <select  asp-for="GenreId"  class="form-control" asp-items="ViewBag.Genres" required></select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid id.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TagIds" class="control-label"></label>
+                                <select  asp-for="TagIds" class="form-control" multiple asp-items="ViewBag.Tags" required></select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid ids.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <textarea  asp-for="Description" class="form-control" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide a valid desc.
+                                </div>
+                            </div>
+                            </div>
+
+                      </div>
+
+                      <div class="col-md-4 offset-4 text-center">
+                          <img width="100%" id="ImageUrlPreview"/>
+                      </div>
+                                
+                      <div class="form-group">
+                          
+                         <input type="submit" value="Update" class="btn btn-outline-success float-right"/>
+                         <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                      </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function() {
+            var output=document.getElementById("ImageUrlPreview");
+            output.src=$("#Image").val();
+
+        });
+        $("#Image").on("change", function (){
+            var output=document.getElementById("ImageUrlPreview");
+            output.src=$(this).val();
+        })
+    </script>
+}

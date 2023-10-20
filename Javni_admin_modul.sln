@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javni_admin_modul", "Javni_admin_modul\Javni_admin_modul.csproj", "{F9388563-CB2D-4066-BF8C-37DBC29F7F85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9388563-CB2D-4066-BF8C-37DBC29F7F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9388563-CB2D-4066-BF8C-37DBC29F7F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9388563-CB2D-4066-BF8C-37DBC29F7F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9388563-CB2D-4066-BF8C-37DBC29F7F85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A58D0AA-F4FF-4A68-B6A9-7A3FAA696830}
+	EndGlobalSection
+EndGlobal

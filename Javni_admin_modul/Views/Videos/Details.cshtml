@@ -1,0 +1,76 @@
+﻿@*Defining model*@
+@model Video
+
+@{
+    ViewData["Title"] = "Video details";
+}
+
+
+@*Define ViewData*@
+<div class="row">
+
+        <div class="col-md-8 offset-2">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Model.Name
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="@Model.Image" width="100%" alt="@Model.Name">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text"><b>Description:</b>@Model.Description</p>
+                            <p class="card-text"><b>StreamingURL:</b> <a href="@Model.StreamingUrl" target="_blank">@Model.StreamingUrl</a></p>
+                            <p class="card-text"><b>Total time:</b>@Model.TotalTime</p>
+                            <p class="card-text"><b>Description:</b>@Model.Description</p>
+                            <p class="card-text">
+                            <b>Genre: </b>
+                            <a asp-controller="Genres" asp-action="Details" asp-route-id="@Model.GenreId">
+                                @Model.Genre.Name
+                            </a>
+                            </p>
+                            <p class="card-text">
+                                <b>Tags:</b>
+                                <hr />
+                                <div class="row">
+                                     @foreach(var tag in Model.VideoTags)
+                                    {
+                                        <div class=column text-center>
+                                            <a asp-controller="Tags" asp-action="Details" asp-route-id="@tag.TagId">@tag.Tag.Name</a>
+                                        </div> 
+                                    }
+                                </div>
+                        </p>
+                        
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Index">
+                                    Back to videos
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    
+</div>
+
+
+@*Write code*@
+
+
+
+
+
